@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         var btnKli = findViewById<Button>(R.id.kali)
         var btnBgi = findViewById<Button>(R.id.bagi)
         var hasil = findViewById<TextView>(R.id.hasil)
+        var stts = findViewById<TextView>(R.id.status)
 
         try {
 
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
                     val tmbh = Int1 + Int2
 
+                    stts.text = "Ditambah"
                     hasil.text = "$tmbh"
 
                 } else {
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                     val Int2 = input2.text.toString().toInt()
 
                     val krg = Int1 - Int2
+                    stts.text = "Dikurang"
 
                     hasil.text = "$krg"
 
@@ -71,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                     val Int2 = input2.text.toString().toInt()
 
                     val kli = Int1 * Int2
+                    stts.text = "Dikali"
 
                     hasil.text = "$kli"
 
@@ -86,7 +90,8 @@ class MainActivity : AppCompatActivity() {
                     val Int2 = input2.text.toString().toInt()
 
                     if (Int2 != 0) {
-                        val bgi = Int1 / Int2;
+                        val bgi = Int1 / Int2
+                        stts.text = "Dibagi"
                         hasil.text = "$bgi"
                     } else {
                         hasil.text = "Angka tidak bisa dibagi 0"
